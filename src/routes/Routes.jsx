@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import Root from "../layout/Root";
 import Home from "../pages/homepages/Home";
-import Books from "../pages/bookspage/Books";
+import ErrorPage from "../pages/errorpage/ErrorPage";
+import BookDetails from "../components/bookDetails/BookDetails";
+import BookPage from "../pages/bookspage/BookPage";
 
 export const router = createBrowserRouter([
   {
@@ -14,12 +16,18 @@ export const router = createBrowserRouter([
       },
       {
         path: "books",
-        Component: Books,
-      },
-    ]
+        Component: BookPage,
+        children: [
+          {
+            path: "books/:id",
+            Component: BookDetails,
+          },
+        ],
+      }
+    ],
   },
   {
     path: "*",
-    element: <h1>404 Page Not Found</h1>,
+    Component: ErrorPage,
   },
 ]);
