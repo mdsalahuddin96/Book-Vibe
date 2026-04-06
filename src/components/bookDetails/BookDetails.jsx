@@ -1,5 +1,7 @@
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 import { useParams } from "react-router";
+import { StoredBookContext } from "../../context/StoredBookContext";
+// import StoredBookContextProvider, { StoredBookContext } from "../../context/StoredBookContext";
 // import { useParams } from 'react-router';
 const booksPromise=fetch('/booksData.json').then(res=>res.json());
 const BookDetails = () => {
@@ -8,6 +10,8 @@ const BookDetails = () => {
     const selectedBook=books.find((book)=>book.bookId==id);
     const { bookName, image, tags, author, category, rating, review, totalPages, publisher, yearOfPublishing } =
     selectedBook;
+    const {handleReadBooks,handleWishlistBooks}=useContext(StoredBookContext)
+
   return (
     <div className="card flex flex-col md:flex-row  container mx-auto mt-10 rounded-2xl">
       <figure className="bg-base-200 flex-1 rounded-2xl ">
@@ -25,7 +29,7 @@ const BookDetails = () => {
             {review}
           </p>
           <div className="flex items-center gap-3">
-            <spn className="font-bold">Tag: </spn>
+            <span className="font-bold">Tag: </span>
             {tags.map((tag, index) => (
               <div
                 key={index}
@@ -63,8 +67,8 @@ const BookDetails = () => {
           </table>
         </div>
         <div className="card-actions">
-          <button className="btn">Read</button>
-          <button className="btn btn-accent">Wishlist</button>
+          <button className="btn" onClick={()=>handleReadBooks(selectedBook)}>Read</button>
+          <button className="btn btn-accent" onClick={()=>handleWishlistBooks(selectedBook)}>Wishlist</button>
         </div>
       </div>
     </div>

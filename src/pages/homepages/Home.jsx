@@ -1,14 +1,16 @@
-import React from 'react';
-import Allbooks from '../../components/allbooks/Allbooks';
-import Banner from '../../components/banner/Banner';
+
+import Allbooks from "../../components/allbooks/Allbooks";
+import Banner from "../../components/banner/Banner";
+
+
 
 const Home = () => {
-    return (
-        <div> 
-          <Banner></Banner>
-          <Allbooks></Allbooks>
-        </div>
-    );
+  return (
+      <div>
+        <Banner></Banner>
+        <Allbooks></Allbooks>
+      </div>
+  );
 };
 
 export default Home;

@@ -17,13 +17,11 @@ export const router = createBrowserRouter([
       {
         path: "books",
         Component: BookPage,
-        children: [
-          {
-            path: "books/:id",
-            Component: BookDetails,
-          },
-        ],
-      }
+      },
+      {
+        path: "book/:id",
+        Component: BookDetails,
+      },
     ],
   },
   {

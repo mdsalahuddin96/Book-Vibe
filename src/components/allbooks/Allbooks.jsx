@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-
 import Books from './Books';
 const booksPromise=fetch('/booksData.json').then(res=>res.json())
 const Allbooks = () => {
