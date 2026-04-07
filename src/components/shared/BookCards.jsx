@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from 'react-router';
 import { IoLocationOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { IoDocumentOutline } from "react-icons/io5";
 const BookCards = ({ book }) => {
+    const navigate=useNavigate()
     const{
+        bookId,
         image,
         bookName,
         tags,
@@ -50,7 +53,7 @@ const BookCards = ({ book }) => {
             <div className="rounded-full px-4 py-1 bg-[#fadeb9] font-medium text-[#FFAC33]">
                 Rating: {rating}    
             </div>
-            <button className="btn bg-[#23BE0A] text-white text-lg font-semibold rounded-full border-none">View Details</button>
+            <button className="btn bg-[#23BE0A] text-white text-lg font-semibold rounded-full border-none" onClick={()=>navigate(`/book/${bookId}`)}>View Details</button>
           </div>
       </div>
     </div>

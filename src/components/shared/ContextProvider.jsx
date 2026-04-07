@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { StoredBookContext } from "../../context/StoredBookContext";
 import { toast } from "react-toastify";
+import { getFromLocalStorage, saveToLocalStorage } from "../../utils/localStorage";
 
 const ContextProvider = ({ children }) => {
-  const [readBooks, setReadBooks] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
+  const [readBooks, setReadBooks] = useState(()=>getFromLocalStorage('readbooks'));
+  const [wishlist, setWishlist] = useState(()=>getFromLocalStorage('wishbooks'));
+  
   const handleReadBooks = (currentBook) => {
+    saveToLocalStorage(currentBook)
     const isExist = readBooks.find((book) => book.bookId == currentBook.bookId);
     if (isExist) {
-      toast.error("Alreader in Read list!");
+      toast.error("Already in Read list!");
       return;
     }
     const isExistWishlist = wishlist.find((book) => book.bookId == currentBook.bookId);
@@ -19,10 +22,12 @@ const ContextProvider = ({ children }) => {
     setReadBooks([...readBooks, currentBook]);
     toast.success(`${currentBook.bookName} is added to Read list`)
   };
+
   const handleWishlistBooks = (currWishBook) => {
+    saveToLocalStorage(currWishBook)
     const isExist = wishlist.find((book) => book.bookId == currWishBook.bookId);
     if (isExist) {
-      toast.error("Alreader in Wishlist");
+      toast.error("Already in Wishlist");
       return;
     }
     const isExistReadList=readBooks.find(book=>book.bookId==currWishBook.bookId);
