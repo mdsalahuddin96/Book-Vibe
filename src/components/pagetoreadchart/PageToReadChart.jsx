@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { useContext } from "react";
 import {
   Bar,
   BarChart,
@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { StoredBookContext } from "../../context/StoredBookContext";
 
 const margin = {
   top: 20,
@@ -40,26 +41,47 @@ function TriangleBar(props) {
 }
 
 export default function PageToReadChart() {
-  const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#00C49F','#FB0100','#23BE0A','#59C6D2','#131313'];
-  const books = useLoaderData();
+  const colors = [
+    "#8884d8",
+    "#82ca9d",
+    "#ffc658",
+    "#ff8042",
+    "#00C49F",
+    "#FB0100",
+    "#23BE0A",
+    "#59C6D2",
+    "#131313",
+  ];
+  const { wishlist } = useContext(StoredBookContext);
   return (
-    <ResponsiveContainer width="100%" height={600}>
-      <BarChart data={books} margin={margin}>
-        <XAxis dataKey="bookName" angle={-45} textAnchor="end" />
-        <YAxis />
+    <div>
+      <h1 className="text-center font-bold text-3xl my-10">Books To Read</h1>
+      {wishlist.length === 0 ? (
+        <div className="bg-base-100 flex justify-center items-center h-screen border border-gray-300 rounded-2xl">
+          <h1 className="text-4xl font-bold text-[#424242]">
+            No Books in your WIsh List!
+          </h1>
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height={600}>
+          <BarChart data={wishlist} margin={margin}>
+            <XAxis dataKey="bookName" angle={-45} textAnchor="end" />
+            <YAxis />
 
-        <Bar dataKey="totalPages" shape={<TriangleBar />}>
-          <LabelList
-            dataKey="totalPages"
-            position="top"
-            fill="#000"
-            fontSize={12}
-          ></LabelList>
-          {colors.map((color,index) => (
-            <Cell key={index} fill={color}/>
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+            <Bar dataKey="totalPages" shape={<TriangleBar />} maxBarSize={150}>
+              <LabelList
+                dataKey="totalPages"
+                position="top"
+                fontSize={16}
+              ></LabelList>
+
+              {wishlist.map((book, index) => (
+                <Cell key={index} fill={colors[index]} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      )}
+    </div>
   );
 }

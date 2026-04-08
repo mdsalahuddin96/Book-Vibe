@@ -25,7 +25,6 @@ export const router = createBrowserRouter([
       },
       {
         path:'chart',
-        loader:()=>fetch('/booksData.json'),
         Component:PageToReadChart
       }
     ],
