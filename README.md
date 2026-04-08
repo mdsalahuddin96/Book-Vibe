@@ -1,16 +1,94 @@
-# React + Vite
+# 📚 Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Project Overview
 
-Currently, two official plugins are available:
+**Book Vibe** is a modern and responsive web application designed for book lovers. It allows users to explore different books, view detailed information, and manage their reading interests. The goal of this project is to create a clean and user-friendly interface where users can easily discover books and organize their reading journey.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was built to practice modern frontend development using React and related technologies.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼️ Screenshot
+<p align="center">
+<img width="1792" height="592" alt="Banner" src="https://github.com/user-attachments/assets/add3b101-0585-4128-bf9f-5bcee7ee1ac6" />
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Live Demo
+
+* 🔗 **Live Site:** **https://my-books-vibe.netlify.app/**
+
+## 🛠️ Main Technologies Used
+
+* HTML5
+* CSS3
+* Tailwind CSS
+* JavaScript (ES6+)
+* React.js
+* React Router
+---
+## ✨ Main Features
+
+* 📚 Browse and explore different books
+* 🔍 View detailed information about each book
+* ❤️ Add books to a reading list or Wish list
+* ⚡ Smooth navigation using React Router
+* 📱 Fully responsive design for mobile, tablet, and desktop
+
+---
+
+## 📦 Dependencies
+
+Main dependencies used in this project:
+
+```
+react
+react-dom
+react-router
+react-icon
+react-rechart
+tailwindcss
+daisyui
+
+```
+
+---
+
+## ⚙️ How to Run the Project Locally
+
+Follow these steps to run the project on your local machine.
+
+### 1️⃣ Clone the repository
+
+```
+git clone https://github.com/mdsalahuddin96/Book-Vibe.git
+```
+
+### 2️⃣ Go to the project folder
+
+```
+cd Book-Vibe
+```
+
+### 3️⃣ Install dependencies
+
+```
+npm install
+```
+
+### 4️⃣ Run the development server
+
+```
+npm run dev
+```
+
+### 5️⃣ Open in browser
+
+```
+http://localhost:5173
+```
+
+---
+
+⭐ If you like this project, feel free to give it a **star** on GitHub!
