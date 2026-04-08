@@ -5,10 +5,10 @@ const Banner = () => {
   const navigate=useNavigate()
   return (
     <div className="hero bg-base-200 min-h-screen container mx-auto mt-10 rounded-2xl">
-      <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+      <div className="hero-content justify-center items-center flex-col lg:flex-row-reverse gap-10">
         <img
           src={bannerImage}
-          className="max-w-sm rounded-lg shadow-2xl"
+          className="rounded-lg shadow-2xl"
         />
         <div>
           <h1 className="text-5xl font-bold mb-10">Books to freshen up <br/>your bookshelf</h1>
