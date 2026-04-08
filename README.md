@@ -18,7 +18,7 @@ This project was built to practice modern frontend development using React and r
 ## 🚀 Live Demo
 
 * 🔗 **Live Site:** **https://my-books-vibe.netlify.app/**
-
+* **GitHub:** **https://github.com/mdsalahuddin96/Book-Vibe/**
 ## 🛠️ Main Technologies Used
 
 * HTML5
@@ -88,7 +88,13 @@ npm run dev
 ```
 http://localhost:5173
 ```
+---
+## 👨‍💻 Author
 
+**Md. Salauddin**
+
+* GitHub: https://github.com/mdsalahuddin96
+* LinkedIn: www.linkedin.com/in/md-salah-uddin96
 ---
 
 ⭐ If you like this project, feel free to give it a **star** on GitHub!
