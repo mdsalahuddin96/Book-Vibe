@@ -8,7 +8,7 @@ const ContextProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState(()=>getFromLocalStorage('wishbooks'));
   
   const handleReadBooks = (currentBook) => {
-    saveToLocalStorage(currentBook)
+    saveToLocalStorage(currentBook,'readbooks')
     const isExist = readBooks.find((book) => book.bookId == currentBook.bookId);
     if (isExist) {
       toast.error("Already in Read list!");
@@ -24,7 +24,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const handleWishlistBooks = (currWishBook) => {
-    saveToLocalStorage(currWishBook)
+    saveToLocalStorage(currWishBook, 'wishbooks')
     const isExist = wishlist.find((book) => book.bookId == currWishBook.bookId);
     if (isExist) {
       toast.error("Already in Wishlist");

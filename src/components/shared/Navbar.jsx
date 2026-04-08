@@ -49,7 +49,7 @@ const Navbar = () => {
               <NavLink to={"/books"} className={({isActive})=>isActive?'text-green-500 border border-green-500 hover:bg-transparent':""}>Listed Books</NavLink>
             </li>
             <li>
-              <NavLink to={"/andythin"} className={({isActive})=>isActive?'text-green-500 border border-green-500 hover:bg-transparent':""}>Pages to Read</NavLink>
+              <NavLink to={"/chart"} className={({isActive})=>isActive?'text-green-500 border border-green-500 hover:bg-transparent':""}>Pages to Read</NavLink>
             </li>
           </ul>
         </div>
