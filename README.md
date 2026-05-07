@@ -1,3 +1,4 @@
+
 # 📚 Book Vibe
 
 ## 📖 Project Overview
@@ -10,7 +11,7 @@ This project was built to practice modern frontend development using React and r
 
 ## 🖼️ Screenshot
 <p align="center">
-<img width="1792" height="592" alt="Banner" src="https://github.com/user-attachments/assets/add3b101-0585-4128-bf9f-5bcee7ee1ac6" />
+<img width="1800" height="760" alt="project4" src="https://github.com/user-attachments/assets/5734c4d9-1bc7-43cf-acc0-69a4cea94da1" />
 </p>
 
 ---
